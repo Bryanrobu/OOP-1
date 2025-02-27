@@ -1,4 +1,4 @@
-package main;
+package candyMachine;
 
 public class Snoep
 {

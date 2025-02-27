@@ -1,9 +1,6 @@
-package main;
-
-import jdk.jshell.SnippetEvent;
+package candyMachine;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class SnoepAutomaat
 {
