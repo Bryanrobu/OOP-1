@@ -1,4 +1,4 @@
-package candyMachine;
+package ovChipkaartSysteem;
 
 public class OvChipkaart
 {
@@ -8,5 +8,5 @@ public class OvChipkaart
 
     private void inchecken() {
 
-}
+    }
 }
