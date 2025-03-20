@@ -2,7 +2,5 @@ package ovChipkaartSysteem;
 
 public class OvPaaltje
 {
-    public void inchecken() {
-
-    }
+    double starttarief = 2.5;
 }
