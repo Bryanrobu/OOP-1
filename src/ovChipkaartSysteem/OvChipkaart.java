@@ -2,18 +2,24 @@ package ovChipkaartSysteem;
 
 public class OvChipkaart
 {
-    OvPaaltje ovpaal = new OvPaaltje();
 
-    double saldo;
-    boolean ingecheckt = false;
+    private double saldo;
+    private boolean ingecheckt = false;
 
     public OvChipkaart(double geld) {
         this.saldo = geld;
     }
 
-    public String inchecken() {
-        if (saldo > ovpaal.starttarief) {
-            
-        }
+    public void inchecken(double starttarief) {
+        this.saldo -= starttarief;
+        this.ingecheckt = true;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public boolean getIngecheckt() {
+        return this.ingecheckt;
     }
 }
