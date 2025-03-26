@@ -16,10 +16,14 @@ public class OvChipkaart
     }
 
     public double getSaldo() {
-        return saldo;
+        return this.saldo;
     }
 
     public boolean getIngecheckt() {
         return this.ingecheckt;
+    }
+
+    public void uitChecken() {
+
     }
 }

@@ -4,8 +4,15 @@ public class OvPaaltje
 {
 
     double starttarief = 2.5;
+    double x;
+    double y;
 
-    public void inchecken(OvChipkaart ovkaart) {
+    public OvPaaltje(double x1, double y1) {
+        this.x = x1;
+        this.y = y1;
+    }
+
+    public void inChecken(OvChipkaart ovkaart) {
         if (ovkaart.getIngecheckt())
         {
             System.out.println("U bent al ingecheckt, u heeft nog " + ovkaart.getSaldo() + " euro op uw kaart staan");
@@ -17,6 +24,10 @@ public class OvPaaltje
         } else {
             System.out.println("Er is iets fout gegaan, probeer het opnieuw");
         }
+
+    }
+
+    public void uitChecken() {
 
     }
 }
