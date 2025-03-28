@@ -4,26 +4,58 @@ public class OvChipkaart
 {
 
     private double saldo;
-    private boolean ingecheckt = false;
+    private String ingecheckt = "";
+    private Station station;
 
-    public OvChipkaart(double geld) {
+    public OvChipkaart(double geld)
+    {
         this.saldo = geld;
     }
 
-    public void inchecken(double starttarief) {
+    public void inchecken(double starttarief, Station incheckstation)
+    {
         this.saldo -= starttarief;
-        this.ingecheckt = true;
+        this.ingecheckt = incheckstation.naam;
+        this.station = incheckstation;
     }
 
-    public double getSaldo() {
-        return this.saldo;
+    public void annuleren(double starttarief)
+    {
+        this.saldo += starttarief;
+        this.ingecheckt = "";
     }
 
-    public boolean getIngecheckt() {
+    public double getSaldo()
+    {
+        return (double) Math.round(this.saldo * 100) / 100;
+    }
+
+    public String getInchecklocation()
+    {
         return this.ingecheckt;
     }
 
-    public void uitChecken() {
+    public Station getStation() {
+        return station;
+    }
+
+    public boolean getIngecheckt()
+    {
+        if (ingecheckt.equals(""))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    public void uitChecken(double starttarief, double afstand)
+    {
+        this.saldo += starttarief;
+        this.saldo -= afstand/100;
+        this.ingecheckt = null;
 
     }
 }

@@ -1,33 +1,58 @@
 package ovChipkaartSysteem;
 
+import java.util.Objects;
+
 public class OvPaaltje
 {
 
-    double starttarief = 2.5;
-    double x;
-    double y;
+    private double starttarief = 2.5;
+    private Station locatie;
 
-    public OvPaaltje(double x1, double y1) {
-        this.x = x1;
-        this.y = y1;
+    public OvPaaltje(Station station)
+    {
+        this.locatie = station;
     }
 
-    public void inChecken(OvChipkaart ovkaart) {
+    public void inChecken(OvChipkaart ovkaart)
+    {
         if (ovkaart.getIngecheckt())
         {
-            System.out.println("U bent al ingecheckt, u heeft nog " + ovkaart.getSaldo() + " euro op uw kaart staan");
-        } else if (ovkaart.getSaldo() >= starttarief) {
-            ovkaart.inchecken(starttarief);
-            System.out.println("U bent succesvol ingecheck, u heeft nog " + ovkaart.getSaldo() + " euro op uw kaart staan" );
-        } else if (ovkaart.getSaldo() < starttarief) {
-            System.out.println("U bent niet ingecheckt vanwege te laag saldo, u heeft " + starttarief + " nodig en u heeft " + ovkaart.getSaldo());
-        } else {
+            System.out.println("U bent al ingecheckt");
+        }
+        else if (ovkaart.getSaldo() >= starttarief)
+        {
+            ovkaart.inchecken(starttarief, locatie);
+            System.out.println("U bent succesvol ingecheck");
+        }
+        else if (ovkaart.getSaldo() < starttarief)
+        {
+            System.out.println("U bent niet ingecheckt vanwege te laag saldo, u heeft minimaal " + starttarief + " nodig en u heeft " + ovkaart.getSaldo());
+        }
+        else
+        {
             System.out.println("Er is iets fout gegaan, probeer het opnieuw");
         }
 
     }
 
-    public void uitChecken() {
+    public void uitChecken(OvChipkaart ovkaart)
+    {
 
+
+        if (!ovkaart.getIngecheckt())
+        {
+            System.out.println("U bent niet ingecheckt, dus u kunt ook niet uitchecken");
+        }
+        else if (this.locatie.naam.equals(ovkaart.getInchecklocation()))
+        {
+            System.out.println("Inchecken geannuleerd, er is geen geld van uw rekening afgegaan");
+            ovkaart.annuleren(starttarief);
+        }
+        else if (ovkaart.getIngecheckt())
+        {
+            double afstand = locatie.afstandMeten(ovkaart.getStation());
+            ovkaart.uitChecken(starttarief, afstand);
+            System.out.println("U bent uitgecheckt, u heeft nog " + ovkaart.getSaldo() + " op uw kaart staan");
+        }
     }
 }
