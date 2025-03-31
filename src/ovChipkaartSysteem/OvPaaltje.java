@@ -43,7 +43,7 @@ public class OvPaaltje
         {
             System.out.println("U bent niet ingecheckt, dus u kunt ook niet uitchecken");
         }
-        else if (this.locatie.naam.equals(ovkaart.getInchecklocation()))
+        else if (this.locatie.getNaam().equals(ovkaart.getInchecklocation()))
         {
             System.out.println("Inchecken geannuleerd, er is geen geld van uw rekening afgegaan");
             ovkaart.annuleren(starttarief);

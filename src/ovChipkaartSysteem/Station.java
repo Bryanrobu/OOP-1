@@ -3,15 +3,19 @@ package ovChipkaartSysteem;
 public class Station
 {
 
-    String naam;
+    private String naam;
     private double x;
     private double y;
 
-    public Station(String stationnaam, double x1, double y1)
+    public Station(String stationNaam, double x1, double y1)
     {
         this.x = x1;
         this.y = y1;
-        this.naam = stationnaam;
+        this.naam = stationNaam;
+    }
+
+    public String getNaam() {
+        return this.naam;
     }
 
     public double afstandMeten(Station anderStation)

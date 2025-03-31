@@ -15,7 +15,7 @@ public class OvChipkaart
     public void inchecken(double starttarief, Station incheckstation)
     {
         this.saldo -= starttarief;
-        this.ingecheckt = incheckstation.naam;
+        this.ingecheckt = incheckstation.getNaam();
         this.station = incheckstation;
     }
 
@@ -35,7 +35,8 @@ public class OvChipkaart
         return this.ingecheckt;
     }
 
-    public Station getStation() {
+    public Station getStation()
+    {
         return station;
     }
 
@@ -54,7 +55,7 @@ public class OvChipkaart
     public void uitChecken(double starttarief, double afstand)
     {
         this.saldo += starttarief;
-        this.saldo -= afstand/100;
+        this.saldo -= afstand / 100;
         this.ingecheckt = null;
 
     }
