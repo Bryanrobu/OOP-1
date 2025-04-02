@@ -5,21 +5,33 @@ public class Main
     public static void main(String[] args)
     {
         Station NijmegenCentraal = new Station("Nijmegen", 300, 500);
-        Station NijmegenHeijendaal = new Station("Heijendaal", 500, 300);
+        Station NijmegenHeyendaal = new Station("Heijendaal", 500, 300);
+
+        OvPoortje ovpoortN = new OvPoortje(NijmegenCentraal);
 
         OvPaaltje ovpaalN = new OvPaaltje(NijmegenCentraal);
 
-        OvPaaltje ovpaalH = new OvPaaltje(NijmegenHeijendaal);
+        OvPoortje ovpoortH = new OvPoortje(NijmegenHeyendaal);
 
-        OvChipkaart ovkaart = new OvChipkaart(50);
+        OvPaaltje ovpaalH = new OvPaaltje(NijmegenHeyendaal);
 
-        System.out.println(ovkaart.getSaldo());
-
-        ovpaalN.inChecken(ovkaart);
+        OvChipkaart ovkaart = new OvChipkaart(50.0);
 
         System.out.println(ovkaart.getSaldo());
 
-        ovpaalH.uitChecken(ovkaart);
+        ovpaalN.scannen(ovkaart);
+
+        System.out.println(ovkaart.getSaldo());
+
+        ovpaalH.scannen(ovkaart);
+
+        System.out.println(ovkaart.getSaldo());
+
+        ovpaalN.scannen(ovkaart);
+
+        System.out.println(ovkaart.getSaldo());
+
+        ovpaalH.scannen(ovkaart);
 
         System.out.println(ovkaart.getSaldo());
     }

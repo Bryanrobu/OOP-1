@@ -42,7 +42,7 @@ public class OvChipkaart
 
     public boolean getIngecheckt()
     {
-        if (ingecheckt.equals(""))
+        if (ingecheckt == "")
         {
             return false;
         }
@@ -56,7 +56,7 @@ public class OvChipkaart
     {
         this.saldo += starttarief;
         this.saldo -= afstand / 100;
-        this.ingecheckt = null;
+        this.ingecheckt = "";
 
     }
 }
