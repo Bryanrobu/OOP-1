@@ -30,6 +30,10 @@ public class OvChipkaart
         return (double) Math.round(this.saldo * 100) / 100;
     }
 
+    public void setSaldo(double bedrag) {
+        this.saldo = this.saldo + bedrag;
+    }
+
     public String getInchecklocation()
     {
         return this.ingecheckt;

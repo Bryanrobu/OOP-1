@@ -7,6 +7,8 @@ public class Main
         Station NijmegenCentraal = new Station("Nijmegen", 300, 500);
         Station NijmegenHeyendaal = new Station("Heijendaal", 500, 300);
 
+        OpwaardeerMachine Service = new OpwaardeerMachine();
+
         OvChipkaart ovkaart = new OvChipkaart(50.0);
 
         OvPoortje ovpoortN = new OvPoortje(NijmegenCentraal);
@@ -20,5 +22,9 @@ public class Main
         ovpaalN.scannen(ovkaart);
 
         ovpaalH.scannen(ovkaart);
+
+        Service.kaartGeven(ovkaart);
+
+        Service.opwaarderenTot(50);
     }
 }
