@@ -23,8 +23,20 @@ public class Main
 
         ovpaalH.scannen(ovkaart);
 
+        Service.opwaarderenTot(50);
+
         Service.kaartGeven(ovkaart);
 
+        Service.opwaarderenTot(10);
+
         Service.opwaarderenTot(50);
+
+        Service.opwaarderenMet(10);
+
+        Service.opwaarderenMet(-10);
+
+        Service.kaartNemen();
+
+        Service.opwaarderenMet(10);
     }
 }

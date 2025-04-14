@@ -6,6 +6,7 @@ public class OpwaardeerMachine
 
     public void kaartGeven(OvChipkaart kaart)
     {
+        System.out.println("Succes, uw pas is ingescant");
         this.pas = kaart;
     }
 
@@ -25,7 +26,7 @@ public class OpwaardeerMachine
         }
         else
         {
-            System.out.println("Er zit geen pas in het systeem, voer uw pas in");
+            System.out.println("Er zit geen pas in het systeem, scan uw pas in");
         }
     }
 
@@ -46,7 +47,7 @@ public class OpwaardeerMachine
         }
         else
         {
-            System.out.println("Er zit geen pas in het systeem, voer uw pas in");
+            System.out.println("Er zit geen pas in het systeem, scan uw pas in");
         }
     }
 
@@ -54,6 +55,7 @@ public class OpwaardeerMachine
     {
         if (this.pas != null)
         {
+            System.out.println("Succes, uw pas is uitgescant");
             this.pas = null;
         }
         else
