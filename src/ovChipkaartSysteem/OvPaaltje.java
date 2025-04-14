@@ -17,6 +17,5 @@ public class OvPaaltje extends OvPoortje
         {
             this.uitChecken(ovkaart);
         }
-
     }
 }

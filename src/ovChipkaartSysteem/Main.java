@@ -7,6 +7,8 @@ public class Main
         Station NijmegenCentraal = new Station("Nijmegen", 300, 500);
         Station NijmegenHeyendaal = new Station("Heijendaal", 500, 300);
 
+        OvChipkaart ovkaart = new OvChipkaart(50.0);
+
         OvPoortje ovpoortN = new OvPoortje(NijmegenCentraal);
 
         OvPaaltje ovpaalN = new OvPaaltje(NijmegenCentraal);
@@ -15,24 +17,8 @@ public class Main
 
         OvPaaltje ovpaalH = new OvPaaltje(NijmegenHeyendaal);
 
-        OvChipkaart ovkaart = new OvChipkaart(50.0);
-
-        System.out.println(ovkaart.getSaldo());
-
         ovpaalN.scannen(ovkaart);
 
-        System.out.println(ovkaart.getSaldo());
-
         ovpaalH.scannen(ovkaart);
-
-        System.out.println(ovkaart.getSaldo());
-
-        ovpaalN.scannen(ovkaart);
-
-        System.out.println(ovkaart.getSaldo());
-
-        ovpaalH.scannen(ovkaart);
-
-        System.out.println(ovkaart.getSaldo());
     }
 }

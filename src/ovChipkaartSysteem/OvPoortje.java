@@ -3,7 +3,7 @@ package ovChipkaartSysteem;
 public class OvPoortje
 {
 
-    private double starttarief = 4;
+    private static double starttarief = 4;
     private Station locatie;
 
     public OvPoortje(Station station)
